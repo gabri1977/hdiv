@@ -46,10 +46,17 @@ public class HDIVConfig implements Serializable {
 
 	private static final Logger log = LoggerFactory.getLogger(HDIVConfig.class);
 
-	public static final String DEFAULT_STATE_PARAMETER_NAME = "_HDIV_STATE_";
+	public static final String DEFAULT_STATE_PARAMETER_NAME = "_G01590727I_";
 
-	public static final String DEFAULT_MODIFY_STATE_PARAMETER_NAME = "_MODIFY_HDIV_STATE_";
-
+	public static final String DEFAULT_MODIFY_STATE_PARAMETER_NAME = "_MODIFY_G01590727I_";
+	
+	/*
+	 * public static final String DEFAULT_STATE_PARAMETER_NAME = "_HDIV_STATE_";
+	 * 
+	 * public static final String DEFAULT_MODIFY_STATE_PARAMETER_NAME =
+	 * "_MODIFY_HDIV_STATE_";
+	 */
+	
 	/**
 	 * Regular expression executor factory.
 	 * 
