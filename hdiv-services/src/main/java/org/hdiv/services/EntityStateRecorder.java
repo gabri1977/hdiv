@@ -15,25 +15,14 @@
  */
 package org.hdiv.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleSuggest<T> extends SuggestImpl<SuggestObjectWrapper> {
+import org.hdiv.context.RequestContextHolder;
 
-	public SimpleSuggest(final String svalue) {
-		this(new SuggestObjectWrapper(svalue));
-	}
+public interface EntityStateRecorder<T> {
 
-	public SimpleSuggest(final SuggestObjectWrapper wrapper) {
-		super(wrapper, SuggestObjectWrapper.ID);
-	}
+	public void registerEntity(final List<T> links, final Class<?> entityClass, final String idValue, final String propertyName,
+			final RequestContextHolder ctx);
 
-	public static <T> List<Suggest<SuggestObjectWrapper>> wrap(final T[] values) {
-		List<Suggest<SuggestObjectWrapper>> suggests = new ArrayList<Suggest<SuggestObjectWrapper>>(values.length);
-		for (int i = 0; i < values.length; i++) {
-			suggests.add(new SimpleSuggest<T>(new SuggestObjectWrapper(String.valueOf(values[i]))));
-		}
-		return suggests;
-	}
-
+	public Object ofuscate(final Object value, final Class<?> target, final String propertyName);
 }
